@@ -95,12 +95,12 @@ export default function Trade() {
           _hover={{ border: "0.06rem solid rgb(211,211,211)" }}>
           <Box>
             <Button
-              bg="rgb(232, 0, 111)"
+              bg="rgb(255,140,0)"
               color="white"
               p="0rem 1rem"
               borderRadius="1.12rem"
               boxShadow="rgb(0 0 0 / 8%) 0rem 5.25rem 0.62rem"
-              _hover={{ bg: "rgb(207, 0, 99)" }} rightIcon={<ChevronDownIcon fontSize="1.37rem" cursor="pointer" />}>Select a token</Button>
+              _hover={{ bg: "rgb(30,144,255)" }} rightIcon={<ChevronDownIcon fontSize="1.37rem" cursor="pointer" />}>Select a token</Button>
           </Box>
           <Flex
             alignItems="center"
@@ -137,12 +137,12 @@ export default function Trade() {
 
         <Box mt="0.5rem">
           <Button
-            color="rgb(213, 0, 102)"
-            bg="rgb(253, 234, 241)"
+            color="white"
+            bg="rgb(255,140,0)"
             width="100%"
             p="1.62rem"
             borderRadius="1.25rem"
-            _hover={{ bg: "rgb(251, 211, 225)" }}>
+            _hover={{ bg: "rgb(255,165,0)" }}>
             Connect Wallet
           </Button>
         </Box>

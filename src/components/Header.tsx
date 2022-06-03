@@ -18,7 +18,7 @@ export default function Layout({ children }: Props) {
         mx="auto"
         mt="1.5rem">
         <Image
-          boxSize="1.56rem"
+          boxSize="5rem"
           src={logo}
           alt="Uniswap Logo" />
         {children}

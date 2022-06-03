@@ -20,7 +20,7 @@ export default function Layout({ children }: Props) {
         <Image
           boxSize="5rem"
           src={logo}
-          alt="Uniswap Logo" />
+          alt="Dex Logo" />
         {children}
       </Flex>
     </Menu>

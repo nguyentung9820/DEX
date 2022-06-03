@@ -55,17 +55,11 @@ Technologies that I used to develop this frontend app
 - [Yarn](https://classic.yarnpkg.com/) or [npm](https://www.npmjs.com/)
 - [MetaMask Browser Extension](https://metamask.io/download.html)
 
-**Clone the project and access the folder**
-
-```bash
-$ git clone https://github.com/eltonlazzarin/reactjs-uniswap-clone-interface.git
-
-$ cd reactjs-uniswap-clone-interface
-```
-
 **Follow the steps below**
 
 ```bash
+$ cd project
+
 # Install the dependencies
 $ yarn
 
@@ -78,9 +72,6 @@ $ yarn start
 **Follow the steps below**
 
 ```bash
-# Clone your fork
-$ git clone https://github.com/eltonlazzarin/reactjs-uniswap-clone-interface.git
-
 # Create a branch with your feature
 $ git checkout -b your-feature
 
@@ -92,7 +83,3 @@ $ git push origin your-feature
 ```
 
 After your pull request is merged, you can delete your branch
-
-## 📝 License
-
-This project is under the MIT license. See the [LICENSE](https://github.com/eltonlazzarin/reactjs-uniswap-clone-interface/blob/master/LICENSE) for more information.

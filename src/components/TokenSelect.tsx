@@ -1,12 +1,13 @@
 import {Button, Box, Image, useDisclosure} from "@chakra-ui/react";
 import {ChevronDownIcon} from "@chakra-ui/icons";
 import etherLogo from "../assets/etherLogo.png";
-
 type Props = {
   openTokenModal: any;
+  value: any
 };
 
-export default function TokenSelect({ openTokenModal }: Props) {
+export default function TokenSelect({ openTokenModal, value }: Props) {
+
   return (
     <Button
       bg="white"
@@ -23,7 +24,7 @@ export default function TokenSelect({ openTokenModal }: Props) {
              alt="Ether Logo"
              mr="0.5rem"
       />
-      ETH
+      {value}
     </Button>
   );
 }

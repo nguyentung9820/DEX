@@ -10,7 +10,7 @@ import {
 import { SettingsIcon, ChevronDownIcon, ArrowDownIcon } from '@chakra-ui/icons';
 import SwapButton from './SwapButton';
 import TokenSelect from './TokenSelect';
-import TokenModal from "./TokenModal";
+import TokenModal from "./Modal/TokenModal";
 
 export default function Trade() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -53,7 +53,7 @@ export default function Trade() {
           borderRadius="1.25rem" border="0.06rem solid rgb(237, 238, 242)"
           _hover={{ border: "0.06rem solid rgb(211,211,211)" }}>
           <Box>
-            <TokenSelect openTokenModal={onOpen} />
+            <TokenSelect openTokenModal={onOpen} value={'ETH'}/>
             <TokenModal isOpen={isOpen} onClose={onClose} />
           </Box>
           <Box>

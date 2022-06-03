@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { ExternalLinkIcon, CopyIcon } from "@chakra-ui/icons";
 import { useEthers } from "@usedapp/core";
-import Identicon from "./Identicon";
+import Identicon from "../Identicon";
 
 type Props = {
   isOpen: any;
@@ -79,8 +79,7 @@ export default function AccountModal({ isOpen, onClose }: Props) {
                   borderColor: "rgb(213, 0, 102)",
                   textDecoration: "underline",
                 }}
-                onClick={handleDeactivateAccount}
-              >
+                onClick={handleDeactivateAccount}>
                 Change
               </Button>
             </Flex>
@@ -91,8 +90,7 @@ export default function AccountModal({ isOpen, onClose }: Props) {
                 fontSize="xl"
                 fontWeight="semibold"
                 ml="2"
-                lineHeight="1.1"
-              >
+                lineHeight="1.1">
                 {account &&
                   `${account.slice(0, 6)}...${account.slice(
                     account.length - 4,
@@ -109,8 +107,7 @@ export default function AccountModal({ isOpen, onClose }: Props) {
                 _hover={{
                   textDecoration: "none",
                   color: "rgb(110, 114, 125)",
-                }}
-              >
+                }}>
                 <CopyIcon mr={1} />
                 Copy Address
               </Button>
@@ -125,8 +122,7 @@ export default function AccountModal({ isOpen, onClose }: Props) {
                 _hover={{
                   color: "rgb(110, 114, 125)",
                   textDecoration: "underline",
-                }}
-              >
+                }}>
                 <ExternalLinkIcon mr={1} />
                 View on Explorer
               </Link>

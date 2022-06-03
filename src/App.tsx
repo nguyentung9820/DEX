@@ -2,7 +2,7 @@ import { ChakraProvider, useDisclosure } from "@chakra-ui/react";
 import theme from "./theme";
 import Header from "./components/Header";
 import ConnectButton from "./components/ConnectButton";
-import AccountModal from "./components/AccountModal";
+import AccountModal from "./components/Modal/AccountModal";
 import Swap from "./components/Swap";
 
 import "@fontsource/inter";

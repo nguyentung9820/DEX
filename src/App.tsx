@@ -3,7 +3,6 @@ import theme from "./theme";
 import Header from "./components/Header";
 import ConnectButton from "./components/ConnectButton";
 import AccountModal from "./components/AccountModal";
-
 import Swap from "./components/Swap";
 
 import "@fontsource/inter";
@@ -11,7 +10,8 @@ import "@fontsource/inter";
 import "./global.css";
 
 function App() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const  { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <ChakraProvider theme={theme}>
       <Header>

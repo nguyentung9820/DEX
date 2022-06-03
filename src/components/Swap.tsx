@@ -4,14 +4,17 @@ import {
   Image,
   Text,
   Button,
-  Input
+  Input, useDisclosure
 } from "@chakra-ui/react";
 
-import { SettingsIcon, ChevronDownIcon, ArrowDownIcon } from '@chakra-ui/icons'
-
-import etherLogo from '../assets/etherLogo.png'
+import { SettingsIcon, ChevronDownIcon, ArrowDownIcon } from '@chakra-ui/icons';
+import SwapButton from './SwapButton';
+import TokenSelect from './TokenSelect';
+import TokenModal from "./TokenModal";
 
 export default function Trade() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box
       w="30.62rem"
@@ -50,21 +53,8 @@ export default function Trade() {
           borderRadius="1.25rem" border="0.06rem solid rgb(237, 238, 242)"
           _hover={{ border: "0.06rem solid rgb(211,211,211)" }}>
           <Box>
-            <Button
-              bg="white"
-              borderRadius="1.12rem"
-              boxShadow="rgb(0 0 0 / 8%) 0rem 5.25rem 0.62rem"
-              fontWeight="500"
-              mr="0.5rem"
-              color="black"
-              rightIcon={<ChevronDownIcon fontSize="1.37rem" cursor="pointer" />}>
-              <Image boxSize="1.5rem"
-                src={etherLogo}
-                alt="Ether Logo"
-                mr="0.5rem"
-              />
-              ETH
-            </Button>
+            <TokenSelect openTokenModal={onOpen} />
+            <TokenModal isOpen={isOpen} onClose={onClose} />
           </Box>
           <Box>
             <Input
@@ -99,8 +89,8 @@ export default function Trade() {
               color="white"
               p="0rem 1rem"
               borderRadius="1.12rem"
-              boxShadow="rgb(0 0 0 / 8%) 0rem 5.25rem 0.62rem"
-              _hover={{ bg: "rgb(30,144,255)" }} rightIcon={<ChevronDownIcon fontSize="1.37rem" cursor="pointer" />}>Select a token</Button>
+              _hover={{ bg: "rgb(30,144,255)" }}
+              rightIcon={<ChevronDownIcon fontSize="1.37rem" cursor="pointer" />}>Select a token</Button>
           </Box>
           <Flex
             alignItems="center"
@@ -134,18 +124,7 @@ export default function Trade() {
             />
           </Box>
         </Flex>
-
-        <Box mt="0.5rem">
-          <Button
-            color="white"
-            bg="rgb(255,140,0)"
-            width="100%"
-            p="1.62rem"
-            borderRadius="1.25rem"
-            _hover={{ bg: "rgb(255,165,0)" }}>
-            Connect Wallet
-          </Button>
-        </Box>
+        <SwapButton/>
       </Box>
     </Box>
   )

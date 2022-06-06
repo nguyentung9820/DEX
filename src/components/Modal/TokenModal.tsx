@@ -20,12 +20,10 @@ type Props = {
   onClose: any;
 };
 
-export default function TokenModal({ isOpen, onClose }: Props) {
+export default function TokenModal({isOpen, onClose}: Props) {
   const [search, setSearch] = useState<any>("");
   const [crypto, setCrypto] = useState<any[]>([]);
   const [selected, setSelected] = useState<any>("");
-
-  console.log(selected)
 
   useEffect(() => {
     Axios.get(
@@ -78,6 +76,11 @@ export default function TokenModal({ isOpen, onClose }: Props) {
               }}
               color="black"/>
           </Box>
+          {/*<Box color="black" display="flex">*/}
+          {/*    <img src={imageToShow} alt="logo" width="50px" />*/}
+          {/*    <span>{tokenNameToShow}</span>*/}
+          {/*</Box>*/}
+
           <div id="customers" className="App">
             <table>
               <thead>
@@ -92,11 +95,29 @@ export default function TokenModal({ isOpen, onClose }: Props) {
                     return val.name.toLowerCase().includes(search.toLowerCase());
                   })
                   .map((val) => {
+                    let hidden = false;
+                    if ((window.__button === 'button2' && val.name === window.__selected)
+                      || (window.__button === 'button1' && val.name === window.__selected2)) {
+                      hidden = true
+                    }
                     return (
                       <>
-                        <tr id={val.name} onClick={function () {
-                          setSelected(val.name);
-                        }}>
+                        <tr id={val.name}
+                            style={{
+                              backgroundColor:window.__button === 'button2'
+                                ? (val.name === window.__selected2 ? "greenyellow" :"")
+                                : (val.name === window.__selected ? "greenyellow" :"")}}
+                            hidden={hidden}
+                            onClick={function (e) {
+                              if (window.__button === 'button2') {
+                                window.__selected2 = val.name;
+                                window.__imageSelected2 = val.icon;
+                              } else {
+                                window.__selected = val.name;
+                                window.__imageSelected = val.icon;
+                              }
+                              setSelected(val.name);
+                            }}>
                           <td className="logo">
                               <a href={val.websiteUrl}>
                                 <img src={val.icon} alt="logo" width="30px" />

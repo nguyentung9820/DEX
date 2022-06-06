@@ -1,6 +1,7 @@
-export interface UseTokenPro {
-  token: any;
+export interface UseTokenProps {
+  token?: string;
 }
-export declare function useToken(props?: UseTokenPro): {
-  token: any;
+export declare function useToken(props?: UseTokenProps): {
+  getTokenProps: (props?: any) => any;
 };
+export declare type UseDisclosureReturn = ReturnType<typeof useToken>;

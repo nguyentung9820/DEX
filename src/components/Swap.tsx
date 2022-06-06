@@ -16,12 +16,15 @@ export default function Trade() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
+
     <Box
       w="30.62rem"
       mx="auto"
       mt="5.25rem"
       boxShadow="rgb(0 0 0 / 8%) 0rem 0.37rem 0.62rem"
       borderRadius="1.37rem">
+      <TokenModal isOpen={isOpen} onClose={onClose} />
+
       <Flex
         alignItems="center"
         p="1rem 1.25rem 0.5rem"
@@ -53,8 +56,7 @@ export default function Trade() {
           borderRadius="1.25rem" border="0.06rem solid rgb(237, 238, 242)"
           _hover={{ border: "0.06rem solid rgb(211,211,211)" }}>
           <Box>
-            <TokenSelect openTokenModal={onOpen} value={'ETH'}/>
-            <TokenModal isOpen={isOpen} onClose={onClose} />
+            <TokenSelect image={window.__imageSelected} openTokenModal={onOpen} value={window.__selected} button="button1"/>
           </Box>
           <Box>
             <Input
@@ -84,13 +86,7 @@ export default function Trade() {
           border="0.06rem solid rgb(237, 238, 242)"
           _hover={{ border: "0.06rem solid rgb(211,211,211)" }}>
           <Box>
-            <Button
-              bg="rgb(255,140,0)"
-              color="white"
-              p="0rem 1rem"
-              borderRadius="1.12rem"
-              _hover={{ bg: "rgb(30,144,255)" }}
-              rightIcon={<ChevronDownIcon fontSize="1.37rem" cursor="pointer" />}>Select a token</Button>
+            <TokenSelect image={window.__imageSelected2} openTokenModal={onOpen} value={window.__selected2} button="button2"/>
           </Box>
           <Flex
             alignItems="center"

@@ -24,7 +24,6 @@ export default function TokenModal({isOpen, onClose}: Props) {
   const [search, setSearch] = useState<any>("");
   const [crypto, setCrypto] = useState<any[]>([]);
   const [selected, setSelected] = useState<any>("");
-
   useEffect(() => {
     Axios.get(
       `https://api.coinstats.app/public/v1/coins?skip=0&limit=100¤cy=INR`
@@ -32,7 +31,6 @@ export default function TokenModal({isOpen, onClose}: Props) {
       setCrypto(res.data.coins);
     });
   }, []);
-
   return (
     <Modal isOpen={isOpen} onClose={onClose} isCentered size="lg">
       <ModalOverlay />

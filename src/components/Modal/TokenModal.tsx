@@ -31,6 +31,7 @@ export default function TokenModal({isOpen, onClose}: Props) {
       setCrypto(res.data.coins);
     });
   }, []);
+  console.log(crypto)
   return (
     <Modal isOpen={isOpen} onClose={onClose} isCentered size="lg">
       <ModalOverlay />
@@ -110,9 +111,11 @@ export default function TokenModal({isOpen, onClose}: Props) {
                               if (window.__button === 'button2') {
                                 window.__selected2 = val.name;
                                 window.__imageSelected2 = val.icon;
+                                window.__price2 = val.price;
                               } else {
                                 window.__selected = val.name;
                                 window.__imageSelected = val.icon;
+                                window.__price1 = val.price
                               }
                               setSelected(val.name);
                             }}>

@@ -11,9 +11,11 @@ import { SettingsIcon, ChevronDownIcon, ArrowDownIcon } from '@chakra-ui/icons';
 import SwapButton from './SwapButton';
 import TokenSelect from './TokenSelect';
 import TokenModal from "./Modal/TokenModal";
+import {useState} from "react";
 
 export default function Trade() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [value, setValue] = useState<number>(0);
 
   return (
 
@@ -72,6 +74,13 @@ export default function Trade() {
               focusBorderColor="none"
               type="number"
               color="black"
+              onChange={function (e) {
+                let token2Value = 0
+                if (e.target.value !== undefined) {
+                  token2Value = Number(e.target.value) * (window.__price1 / window.__price2);
+                }
+                setValue(token2Value);
+              }}
             />
           </Box>
         </Flex>
@@ -117,9 +126,13 @@ export default function Trade() {
               focusBorderColor="none"
               type="number"
               color="black"
+              value={value}
             />
           </Box>
         </Flex>
+        <Box color="black">
+          <div>1 {window.__selected2} = {window.__price2/window.__price1} {window.__selected}</div>
+        </Box>
         <SwapButton/>
       </Box>
     </Box>

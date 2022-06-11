@@ -27,6 +27,8 @@ const ALL_TOKENS = gql`
         symbol
         name
         id
+        derivedETH
+        decimals
      }
   }
 `
